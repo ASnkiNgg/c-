@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace cos
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+
+        public MainWindow()
+        {
+           
+            InitializeComponent();
+            
+        }
+        string haslo = "";
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Dane pracownika " + imie.Text + nazwisko.Text + cos.Text +" hasło to "+ haslo);
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            haslo = "";
+            string[] male = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "w", "x", "y", "z" };
+           string[] duze = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "W", "X", "Y", "Z" };
+
+            string[] specjalne = { "!", "_", "+", "@", "#", "$", "%", "^", "&", "*", "(", ")", "<", ">", "?" };
+            string[] liczby = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", };
+
+            int ill = Int32.Parse(ile.Text);
+            Random rd = new Random();
+          
+            string coss = "";
+            bool spec= (bool)znaki.IsChecked;
+            bool cyf = (bool)cyfry.IsChecked;
+            bool mies = (bool)mieszane.IsChecked;
+            for (int i = 0; i < ill; i++)
+            {
+                
+                if (spec)
+                {
+                    haslo += specjalne[rd.Next(specjalne.Length)];
+                    coss += "specjalne";
+                    spec = false;
+                   
+                }
+                else if (mies)
+                {
+                    haslo += duze[rd.Next(duze.Length)];
+                    mies = false;
+                    
+                }
+                else if (cyf)
+                {
+                    haslo += liczby[rd.Next(liczby.Length)];
+                    cyf = false;
+                   
+                }
+                else
+                {
+                    haslo += male[rd.Next(male.Length)];
+                }
+            }
+
+           
+
+                MessageBox.Show(haslo);
+        }
+    }
+}
