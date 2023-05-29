@@ -1,0 +1,32 @@
+<Window x:Class="cos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cos"
+        mc:Ignorable="d"
+        Title="dodajpracownika" Height="450" Width="800">
+    <Grid Background="#B0C4DE">
+        <GroupBox Header="Dane pracownika" Margin="95,78,439,133"/>
+        <GroupBox Header="Generowanie hasła" Margin="461,78,73,133"/>
+        <CheckBox x:Name="mieszane" Content="Małe i wielkie litery" HorizontalAlignment="Left" Margin="499,186,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cyfry" Content="Cyfry" HorizontalAlignment="Left" Margin="499,229,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="znaki" Content="Znaki specjalne" HorizontalAlignment="Left" Margin="499,142,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ile" HorizontalAlignment="Left" Margin="579,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="497,105,0,0" TextWrapping="Wrap" Text="Ile znaków?" VerticalAlignment="Top" Height="15"/>
+        <TextBlock HorizontalAlignment="Left" Margin="114,113,0,0" TextWrapping="Wrap" Text="Imię" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="114,169,0,0" TextWrapping="Wrap" Text="Nazwisko" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="114,224,0,0" TextWrapping="Wrap" Text="Stanowisko" VerticalAlignment="Top"/>
+        <TextBox x:Name="imie" HorizontalAlignment="Left" Margin="216,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="nazwisko" HorizontalAlignment="Left" Margin="216,177,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Generuj hasło" HorizontalAlignment="Left" Margin="560,265,0,0" VerticalAlignment="Top" Background="#4682B4" Foreground="white" RenderTransformOrigin="0.253,0.417" Width="90" Click="Button_Click_1"/>
+        <Button Content=" zatwierdź" HorizontalAlignment="Left" Margin="328,386,0,0" VerticalAlignment="Top" Background="#4682B4" Foreground="white" RenderTransformOrigin="0.253,0.417" Width="194" Click="Button_Click"/>
+        <ComboBox x:Name="cos" HorizontalAlignment="Left" Margin="216,222,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>Tester</ComboBoxItem>
+            <ComboBoxItem>Młodszy programista</ComboBoxItem>
+            <ComboBoxItem>Starszy programista</ComboBoxItem>
+            <ComboBoxItem>Kierownik</ComboBoxItem>
+            
+        </ComboBox>
+    </Grid>
+</Window>
